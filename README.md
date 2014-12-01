@@ -6,6 +6,12 @@ Support for:
 - stateless front end clients
 - server logic running in ruby on Raspberry Pi.  Support for GPIO pins for lights/buttons
 
+Run it
+======
+
+
+        $ bundle exec rails server
+
 
 Architecture Notes
 ==================
