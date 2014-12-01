@@ -1,3 +1,9 @@
+# Intellij:
+.idea
+*.iml
+
+log
+
 *.gem
 *.rbc
 /.config
