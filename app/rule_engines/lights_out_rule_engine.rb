@@ -4,11 +4,16 @@ module LightsOutRuleEngine
     'hello'
   end
 
-  # TODO:
-  # def default_state
+  def default_state
+    GridState.default_state(5,5)
+  end
+
+  # @param [Hash] event has key "type" and "data"
+  def next_state_for(current_state, event)
+
+    puts "debug: event is #{event}"
+
+    current_state
+  end
 
 end
-
-# TODO: new class GridState, with
-# - to_json
-# - to_csv (no dimention information), from_csv
