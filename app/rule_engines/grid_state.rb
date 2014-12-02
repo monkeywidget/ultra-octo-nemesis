@@ -55,6 +55,38 @@ class GridState
   end
 
 end
+
+class Coordinates
+  attr_accessor :x
+  attr_accessor :y
+
+  def initialize(point_x,point_y)
+    @x = point_x
+    @y = point_y
+  end
+
+  def clone
+    Coordinates.new(@x, @y)
+  end
+
+  def north
+    Coordinates.new(@x, @y+1)
+  end
+
+  def south
+    Coordinates.new(@x, @y-1)
+  end
+
+  def west
+    Coordinates.new(@x-1, @y)
+  end
+
+  def east
+    Coordinates.new(@x+1, @y)
+  end
+
+end
+
 =begin
 # debug code:
 width = 3

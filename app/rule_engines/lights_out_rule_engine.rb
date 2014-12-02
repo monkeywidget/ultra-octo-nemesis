@@ -12,6 +12,15 @@ module LightsOutRuleEngine
   def next_state_for(current_state, event)
 
     puts "debug: event is #{event}"
+    puts "debug: current_state is a #{current_state.class.name}"
+
+    raise ArgumentError.new('invalid event type') if event['type'].nil? || !event['type'].eql?('click')
+
+    raise ArgumentError.new('invalid click coordinates') if event['data'].nil? || event['data']['x'].nil? || event['data']['y'].nil?
+
+    coordinates = Coordinates.new(event['data']['x'],event['data']['y'])
+
+    current_state.toggle_neighbors_of coordinates
 
     current_state
   end
